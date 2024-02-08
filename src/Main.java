@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -147,8 +149,109 @@ public class Main {
         for (int year0 = 0;year0 <= endOfPeriod;year0 = year0 + 79){
             if (year0 >= beginningOfPeriod){
                 System.out.println(year0);
-
             }
         }
+        System.out.println("Домашняя работа №8");
+        System.out.println("Задание 1 - 2");
+        int [] massive = new int [3];
+        for (int i = 0; i < massive.length;i++){
+            massive[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(massive));
+        float [] massive1 = {1.57f, 7.654f, 9.986f};
+        System.out.println(Arrays.toString(massive1));
+        int [] massive2 = new int [18];
+        for (int i = 0; i < massive2.length;i++){
+            massive2[i] = i + 1;
+        }
+        System.out.println(Arrays.toString(massive2));
+        System.out.println("Задание 3");
+        int [] massive3 = new int [3];
+        for (int i = 0; i < massive3.length;i++){
+            massive3[i] = i + 1;
+        }
+        for (int i = massive3.length - 1; i >= 0;i--){
+            if (i != 0){
+                System.out.print(massive3[i] + ", ");
+            }else System.out.println( massive3[i] );
+        }
+        float [] massive4 = {1.57f, 7.654f, 9.986f};
+        for (int i = massive4.length - 1; i >= 0;i--){
+            if (i != 0){
+                System.out.print(massive4[i] + ", ");
+            }else System.out.println( massive4[i] );
+        }
+        int [] massive5 = new int [18];
+        for (int i = 0; i < massive5.length;i++){
+            massive5[i] = i + 1;
+        }
+        for (int i = massive5.length - 1; i >= 0;i--){
+            if (i != 0){
+                System.out.print(massive5[i] + ", ");
+            }else System.out.println( massive5[i] );
+        }
+        System.out.println("Задание 4");
+        int [] massive6 = new int [12];
+        byte b=0;
+        for (int i = 0; i < massive6.length ;i++){
+            massive6[i] = b + 1;
+            b++;
+            if (massive6[i] % 2 ==0 && massive6[i] != massive6.length ){
+                System.out.print(massive6[i] + ", ");}
+            else if (massive6[i] % 2 ==0 && massive6[i] == massive6.length) {
+                System.out.print(massive6[i]);}
+        }
+        System.out.println();
+        System.out.println( "Домашняя работа № 9" );
+        task1();
+    }
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++){
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
+    public static void task1() {
+        System.out.println( "Задание 1" );
+        {int[] arr = generateRandomArray();
+        int sum = 0;
+        for ( int element : arr){
+            sum = sum + element;
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей.");}
+        System.out.println( "Задание 2" );
+        {int[] arr = generateRandomArray();
+        int maxMoney = -1;
+        int minMoney = 250000;
+        for (final int money : arr){
+            if (money > maxMoney){
+                maxMoney = money;
+            }
+            if (money < minMoney){
+                minMoney = money;
+            }
+        }
+        System.out.println("Максимальная сумма трат за день составила " + maxMoney + " рублей.");
+        System.out.println("Минимальная сумма трат за день составила " + minMoney + " рублей.");}
+        System.out.println( "Задание 3 ");
+        {int[] arr = generateRandomArray();
+        int sum = 0;
+        byte days = 30;
+        for ( int element : arr){
+            sum = sum + element;
+        }
+        float mediumMoney = sum / days;
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей.");
+        System.out.println("Средняя сумма трат за день составила " + mediumMoney + " рублей.");}
+        System.out.println( "Задание 4 ");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for ( int i = reverseFullName.length - 1 ; i >= 0; i--){
+            System.out.print(reverseFullName[i]);
+        }
+
+
     }
 }
