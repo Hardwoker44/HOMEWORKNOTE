@@ -204,7 +204,9 @@ public class Main {
         System.out.println();
         System.out.println( "Домашняя работа № 9" );
         task1();
+        task2();
     }
+
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
@@ -238,12 +240,11 @@ public class Main {
         System.out.println("Минимальная сумма трат за день составила " + minMoney + " рублей.");}
         System.out.println( "Задание 3 ");
         {int[] arr = generateRandomArray();
-        int sum = 0;
-        byte days = 30;
+        double sum = 0;
         for ( int element : arr){
             sum = sum + element;
         }
-        float mediumMoney = sum / days;
+        double mediumMoney = sum / arr.length;
         System.out.println("Сумма трат за месяц составила " + sum + " рублей.");
         System.out.println("Средняя сумма трат за день составила " + mediumMoney + " рублей.");}
         System.out.println( "Задание 4 ");
@@ -251,7 +252,27 @@ public class Main {
         for ( int i = reverseFullName.length - 1 ; i >= 0; i--){
             System.out.print(reverseFullName[i]);
         }
-
-
     }
+    public static void task2(){
+        System.out.println("Домашняя работа №10");
+        {
+            System.out.println("Задание 1");
+            String firstName = "Ivan";
+            String middleName = "Ivanovich";
+            String lastName = "Ivanov";
+            String fullName = lastName + " " + firstName + " " + middleName;
+            System.out.println("Ф.И.О.сотруднка — " + fullName);
+            System.out.println("Задание 2");
+            String fullNameTrue = fullName.toUpperCase();
+            System.out.println("Данные Ф.И.О. сотрудника для заполнения отчета — " + fullNameTrue);
+        }
+        System.out.println("Задание 3");
+        {
+            String fullName = "Иванов Семён Семёнович";
+            String fullNameTrue = fullName.replace("ё","е");
+            System.out.println("Данные Ф. И. О. сотрудника — " + fullNameTrue);
+        }
+    }
+
+
 }
