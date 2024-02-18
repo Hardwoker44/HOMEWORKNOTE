@@ -208,8 +208,8 @@ public class Main {
         task1();
         task2();
 
-        System.out.println(" Домашняя работа № 11 ");
-        System.out.println(" Задание 1 ");
+        System.out.println(" Домашняя работа №  11 ");
+        System.out.println(" Задание  1 ");
         int  yearNow = LocalDate.now().getYear();
         calculateLeapYear(yearNow);
         System.out.println(" Задание 2 ");
