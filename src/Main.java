@@ -1,4 +1,6 @@
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
@@ -205,6 +207,25 @@ public class Main {
         System.out.println( "Домашняя работа № 9" );
         task1();
         task2();
+
+        System.out.println(" Домашняя работа № 11 ");
+        System.out.println(" Задание 1 ");
+        int  yearNow = LocalDate.now().getYear();
+        calculateLeapYear(yearNow);
+        System.out.println(" Задание 2 ");
+        int mySystem = 1;
+        int myYearOfIssue = 2022;
+        downloadSuitableSoftware(mySystem,myYearOfIssue);
+        System.out.println(" Задание 3 ");
+        byte deliveryDistance = 95;
+        byte day = 1;
+        byte distance1 = 20;
+        byte distance2 = 60;
+        byte distance3 = 100;
+        calculateDaysUsingDeliveryDistance( deliveryDistance, day, distance1, distance2, distance3);
+        int allDays = calculateDaysUsingDeliveryDistance( deliveryDistance, day, distance1, distance2, distance3);
+        System.out.println("Потребуется дней: " + allDays);
+
     }
 
     public static int[] generateRandomArray() {
@@ -273,6 +294,42 @@ public class Main {
             System.out.println("Данные Ф. И. О. сотрудника — " + fullNameTrue);
         }
     }
+    public static void calculateLeapYear(int yearNow){
+        short startYear = 1584;
+        if (yearNow > startYear && yearNow % 4 == 0 && yearNow % 100 != 0 || yearNow > startYear && yearNow % 400 == 0) {
+            System.out.println(yearNow + " год является високосным");
+        } else {
+            System.out.println(yearNow + " год не является високосным");
+        }
+    }
+    public static void downloadSuitableSoftware(int mySystem, int myYearOfIssue){
+        byte systemIos = 0;
+        byte systemAndroid = 1;
+        int maxYearOfIssue = LocalDate.now().getYear();
+        if (mySystem == systemIos && myYearOfIssue < maxYearOfIssue){
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
+        }else if (mySystem == systemIos && myYearOfIssue == maxYearOfIssue){
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        }else if (mySystem == systemAndroid && myYearOfIssue < maxYearOfIssue){
+            System.out.println("Установите облегченную версию приложения для Android по ссылке.");
+        }else if (mySystem == systemAndroid && myYearOfIssue == maxYearOfIssue){
+            System.out.println("Установите версию приложения для Android по ссылке.");
+        }
+    }
+    public static int calculateDaysUsingDeliveryDistance(byte deliveryDistance,byte day,byte distance1,byte distance2,byte distance3){
+        int myDays = 0;
+        if (deliveryDistance <= distance1){
+            myDays = day;
+        } else if (deliveryDistance >= distance1 && deliveryDistance <= distance2){
+            myDays = day + 1;
+        } else if (deliveryDistance >= distance2 && deliveryDistance <= distance3){
+            myDays = day + 2;
+        } else if (deliveryDistance > distance3){
+            System.out.println("Доставки нет");
+        }
+        return myDays;
+    }
+
 
 
 }
