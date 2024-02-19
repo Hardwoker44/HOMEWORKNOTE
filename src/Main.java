@@ -218,14 +218,13 @@ public class Main {
         downloadSuitableSoftware(mySystem,myYearOfIssue);
         System.out.println(" Задание 3 ");
         byte deliveryDistance = 95;
-        byte day = 1;
-        byte distance1 = 20;
-        byte distance2 = 60;
-        byte distance3 = 100;
-        calculateDaysUsingDeliveryDistance( deliveryDistance, day, distance1, distance2, distance3);
-        int allDays = calculateDaysUsingDeliveryDistance( deliveryDistance, day, distance1, distance2, distance3);
+        calculateDaysUsingDeliveryDistance(deliveryDistance);
+        int allDays = calculateDaysUsingDeliveryDistance(deliveryDistance);
+        if (allDays > 0){
         System.out.println("Потребуется дней: " + allDays);
-
+        } else {
+            System.out.println("Доставки нет");
+        }
     }
 
     public static int[] generateRandomArray() {
@@ -316,16 +315,20 @@ public class Main {
             System.out.println("Установите версию приложения для Android по ссылке.");
         }
     }
-    public static int calculateDaysUsingDeliveryDistance(byte deliveryDistance,byte day,byte distance1,byte distance2,byte distance3){
+    public static int calculateDaysUsingDeliveryDistance(byte deliveryDistance){
         int myDays = 0;
+        byte day = 0;
+        byte distance1 = 20;
+        byte distance2 = 60;
+        byte distance3 = 100;
         if (deliveryDistance <= distance1){
-            myDays = day;
-        } else if (deliveryDistance >= distance1 && deliveryDistance <= distance2){
             myDays = day + 1;
-        } else if (deliveryDistance >= distance2 && deliveryDistance <= distance3){
+        } else if (deliveryDistance >= distance1 && deliveryDistance <= distance2){
             myDays = day + 2;
+        } else if (deliveryDistance >= distance2 && deliveryDistance <= distance3){
+            myDays = day + 3;
         } else if (deliveryDistance > distance3){
-            System.out.println("Доставки нет");
+            myDays = day;
         }
         return myDays;
     }
