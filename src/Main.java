@@ -225,6 +225,19 @@ public class Main {
         } else {
             System.out.println("Доставки нет");
         }
+        Author rowling = new Author("Joanne", "Rowling");
+        System.out.println("sarah.name = " + rowling.getName());
+        System.out.println("sarah.surname = " + rowling.getSurname());
+        Author murakami = new Author("Haruki","Murakami");
+        Book harryPotter = new Book(rowling,"Harry Potter", 1997);
+        System.out.println(harryPotter);
+        System.out.println(harryPotter.getAuthor().getName() + " " + harryPotter.getAuthor().getSurname() + " " + harryPotter.getTitle() + " " + harryPotter.getYearOfPublication());
+        Book afterDark = new Book(murakami,"After Dark", 2019);
+        System.out.println(afterDark);
+        System.out.println(afterDark.getAuthor().getName() + " " + afterDark.getAuthor().getSurname() + " " + harryPotter.getTitle() + " " + harryPotter.getYearOfPublication());
+
+
+
     }
 
     public static int[] generateRandomArray() {
@@ -332,7 +345,5 @@ public class Main {
         }
         return myDays;
     }
-
-
 
 }
