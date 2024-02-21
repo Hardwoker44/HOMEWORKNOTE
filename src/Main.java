@@ -232,9 +232,13 @@ public class Main {
         Book harryPotter = new Book(rowling,"Harry Potter", 1997);
         System.out.println(harryPotter);
         System.out.println(harryPotter.getAuthor().getName() + " " + harryPotter.getAuthor().getSurname() + " " + harryPotter.getTitle() + " " + harryPotter.getYearOfPublication());
+        harryPotter.setYearOfPublication(1998);
+        System.out.println(harryPotter.getAuthor().getName() + " " + harryPotter.getAuthor().getSurname() + " " + harryPotter.getTitle() + " " + harryPotter.getYearOfPublication());
         Book afterDark = new Book(murakami,"After Dark", 2019);
         System.out.println(afterDark);
-        System.out.println(afterDark.getAuthor().getName() + " " + afterDark.getAuthor().getSurname() + " " + harryPotter.getTitle() + " " + harryPotter.getYearOfPublication());
+        System.out.println(afterDark.getAuthor().getName() + " " + afterDark.getAuthor().getSurname() + " " + afterDark.getTitle() + " " + afterDark.getYearOfPublication());
+        afterDark.setYearOfPublication(2021);
+        System.out.println(afterDark.getAuthor().getName() + " " + afterDark.getAuthor().getSurname() + " " + afterDark.getTitle() + " " + afterDark.getYearOfPublication());
 
 
 
