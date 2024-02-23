@@ -239,6 +239,16 @@ public class Main {
         System.out.println(afterDark.getAuthor().getName() + " " + afterDark.getAuthor().getSurname() + " " + afterDark.getTitle() + " " + afterDark.getYearOfPublication());
         afterDark.setYearOfPublication(2021);
         System.out.println(afterDark.getAuthor().getName() + " " + afterDark.getAuthor().getSurname() + " " + afterDark.getTitle() + " " + afterDark.getYearOfPublication());
+        System.out.println("Домашняя работа №13");
+        System.out.println("Задание 1");
+        System.out.println(rowling.equals(murakami));
+        System.out.println(harryPotter.equals(afterDark));
+        System.out.println(rowling);
+        System.out.println(harryPotter);
+        System.out.println(murakami);
+        System.out.println(afterDark);
+
+
 
 
 
